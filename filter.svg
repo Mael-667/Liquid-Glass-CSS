@@ -1,0 +1,13 @@
+<svg height="0" width="0" display="block" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter id="liquidGlassFilter" color-interpolation-filters="sRGB" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse">
+                <feTurbulence type="fractalNoise" baseFrequency="0.009 0.011" numOctaves="2" seed="8" stitchTiles="stitch" x="0%" y="0%" width="100%" height="100%" result="turbulence"/>
+                <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="55" xChannelSelector="R" yChannelSelector="B" x="0%" y="0%" width="100%" height="100%" result="displacementMap1"/>
+        </filter>
+        <filter id="liquidGlassFilter2" color-interpolation-filters="linearRGB" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse">
+            <feBlend mode="screen" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" in2="SourceGraphic" result="blend"/>
+            <feTurbulence type="fractalNoise" baseFrequency="0.009 0.008" numOctaves="2" seed="8" stitchTiles="stitch" x="0%" y="0%" width="100%" height="100%" result="turbulence"/>
+            <feDisplacementMap in="blend" in2="turbulence" scale="55" xChannelSelector="R" yChannelSelector="B" x="0%" y="0%" width="100%" height="100%" result="displacementMap1"/>
+        </filter>
+    </defs>
+</svg>

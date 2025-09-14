@@ -1,0 +1,160 @@
+.liquidGlass, .liquidGlass::after, .liquidGlass::before{
+    transform: translate3d(0, 0, 0);
+    border-radius: 0.9rem;
+    top: 0;
+}
+
+.liquidGlass{
+    position: relative;
+    z-index: 10;
+    width: fit-content;
+    color: white;
+    font-size: 1.1em;
+    text-shadow: 0 0 4px black;
+}
+
+.liquidGlass::after, .liquidGlass::before{
+    pointer-events: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+
+.liquidGlass>*{
+    position: relative;
+    z-index: 12;
+}
+
+.liquidGlass::after{
+    content: "";
+    display: block;
+    z-index: 11;
+    box-shadow: inset 1px 1px 2px 0px rgb(255 255 255 / 87%), inset -1px -2px 3px 1px rgb(49 49 49 / 30%), 0px 0px 6px 1px rgb(0 0 0 / 38%);
+    background: rgb(255 255 255 / 3%);
+}
+
+
+.liquidGlass::before{
+    content: "";
+    display: block;
+    z-index: 9;
+    filter: url(./filter.svg#liquidGlassFilter2);
+    backdrop-filter: blur(3px);
+}
+
+.glassLightMode{
+    color: black;
+    font-size: 1em;
+    text-shadow: none;
+}
+
+.glassLightMode::after{
+    box-shadow: 1px 2px 4px -2px rgb(0 0 0 / 27%), inset 2px 3px 5px 0px rgb(255 255 255 / 28%);
+    background-color: #00000009;
+}
+
+.liquidGlassLarge, .liquidGlassLarge::after, .liquidGlassLarge::before{
+    transform: translate3d(0, 0, 0);
+    border-radius: 3rem;
+    top: 0;
+}
+
+.liquidGlassLarge{
+    position: relative;
+    z-index: 10;
+    width: fit-content;
+    color: white;
+    font-size: 1.1em;
+    text-shadow: 0 0 4px black;
+}
+
+.liquidGlassLarge::after, .liquidGlassLarge::before{
+    pointer-events: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+
+.liquidGlassLarge>*{
+    position: relative;
+    z-index: 12;
+}
+
+
+.liquidGlassLarge::before{
+    content: "";
+    display: block;
+    z-index: 9;
+    filter: url(./filter.svg#liquidGlassFilter);
+    backdrop-filter: blur(3px);
+}
+
+.liquidGlassLarge::after{
+    content: "";
+    display: block;
+    z-index: 11;
+    background: rgb(255 255 255 / 3%);
+    box-shadow:inset 1px 1px 3px 1px rgb(255 255 255 / 38%), inset -1px -2px 3px 1px rgb(49 49 49 / 30%), 0px 0px 7px 1px rgb(0 0 0 / 46%);
+}
+
+.liquidBtn{
+    background: #ffffff36;
+    border: 1px solid #ffffff78;
+    backdrop-filter: blur(3px);
+    color: white;
+    text-shadow: 0 0 7px black;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+    border-radius: 0.5rem;
+    transition: 150ms;
+}
+
+.liquidBtn:hover{
+    background: #ffffff59;
+}
+
+.dynamic::after{
+    background: var(--background) !important;
+    box-shadow: var(--shadow) !important;
+}
+
+.dynamic:hover::after{
+    background: var(--backgroundHover) !important;
+}
+
+
+.blur-0::before{
+    backdrop-filter: blur(0px);
+}
+.blur-1::before{
+    backdrop-filter: blur(1px);
+}
+.blur-2::before{
+    backdrop-filter: blur(2px);
+}
+.blur-3::before{
+    backdrop-filter: blur(3px);
+}
+.blur-4::before{
+    backdrop-filter: blur(4px);
+}
+.blur-5::before{
+    backdrop-filter: blur(5px);
+}
+.blur-6::before{
+    backdrop-filter: blur(6px);
+}
+.blur-7::before{
+    backdrop-filter: blur(7px);
+}
+.blur-8::before{
+    backdrop-filter: blur(8px);
+}
+.blur-9::before{
+    backdrop-filter: blur(9px);
+}
+.blur-10::before{
+    backdrop-filter: blur(10px);
+}
