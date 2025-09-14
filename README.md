@@ -110,3 +110,9 @@ Check out [my portfolio](https://mael-667.github.io/portfolio/) for live example
     border-radius: (your-radius);
 }
 ```
+
+---
+
+## Feedback
+
+I’d love to hear your thoughts! If you have any suggestions or encounter any issues, please feel free to reach out or open an issue.
