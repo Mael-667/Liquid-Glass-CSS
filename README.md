@@ -96,7 +96,7 @@ Liquid Glass elements will now change color based on the defined tint of the ele
 
 ## Example
 
-Check out [my portfolio](https://mael-667.github.io/portfolio/) for live examples of Liquid Glass in action.
+Check out [my portfolio](https://mael-667.github.io/portfolio/) for live examples of Liquid Glass CSS in action.
 
 ---
 
