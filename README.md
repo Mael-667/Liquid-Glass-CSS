@@ -8,7 +8,7 @@
 
 ## Installation
 
-Download the latest bundle from the [Release section](#) and add it to your project:
+Download the latest **liquidGlass.js** from the [Release section](https://github.com/Mael-667/Liquid-Glass-CSS/releases/tag/v1) and add it to your project:
 
 ```html
 <head>
