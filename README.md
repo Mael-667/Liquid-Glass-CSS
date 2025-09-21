@@ -96,17 +96,29 @@ Liquid Glass elements will now change color based on the defined tint of the ele
 
 ## Example
 
-Check out [my portfolio](https://mael-667.github.io/portfolio/) for live examples of Liquid Glass in action.
+Check out [my portfolio](https://mael-667.github.io/portfolio/) for live examples of Liquid Glass CSS in action.
 
 ---
 
 ## Customization
 
-* **Background & Shadows**: Modify on the element's `:after` pseudo-element.
-* **Border-radius**: Apply changes to the element itself, as well as its `:before` and `:after` pseudo-elements:
+* **Background color & Shadows**: Modify on the element's `:after` pseudo-element.
+```css
+.element::after {
+    background: rgb(0 0 0 / 7%);
+    box-shadow:inset 1px 1px 3px #ffffff, inset -1px -2px 3px #3131314d, 0px 0px 12px #00000075;
+}
+```
 
+* **Border-radius**: Apply changes to the element itself, as well as its `:before` and `:after` pseudo-elements:
 ```css
 .element, .element::before, .element::after {
     border-radius: (your-radius);
 }
 ```
+
+---
+
+## Feedback
+
+I’d love to hear your thoughts! If you have any suggestions or encounter any issues, please feel free to reach out or open an issue.
