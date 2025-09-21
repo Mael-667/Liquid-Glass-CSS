@@ -33,6 +33,10 @@ document.addEventListener("DOMContentLoaded", function(){
     };
 });
 
+function addEvt(target, event, fun){
+    target.addEventListener(event, fun);
+}
+
 //add "data-hue:#hexcolor" to an element so that its color permeates liquidglasses with a parent element with the class dynamicColor that hover over it
 function dynamicLiquidGlassColor(){
     let backgrounds = document.querySelectorAll("[data-hue]");
