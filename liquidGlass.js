@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function(){
     let svg = document.createElementNS("http://www.w3.org/2000/svg",'svg');
     svg.setAttribute("height", "0");
     svg.setAttribute("width", "0");
-    svg.setAttribute("display", "block");
+    svg.setAttribute("display", "none");
     svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
     svg.innerHTML = `
     <defs>
@@ -33,10 +33,6 @@ document.addEventListener("DOMContentLoaded", function(){
     };
 });
 
-function addEvt(target, event, fun){
-    target.addEventListener(event, fun);
-}
-
 //add "data-hue:#hexcolor" to an element so that its color permeates liquidglasses with a parent element with the class dynamicColor that hover over it
 function dynamicLiquidGlassColor(){
     let backgrounds = document.querySelectorAll("[data-hue]");
@@ -56,7 +52,7 @@ function dynamicLiquidGlassColor(){
 
     //for each liquidglass element with a parent class dynamicColor, the function will check if its displayed within an element with an hue. If so, it will apply the filter and mark it as selected.
     //the unselected elements at the end of the loop, therefore those which are not at all on a background, will have their leftover hue removed
-    addEvt(document, "scroll", function(){
+    document.addEventListener("scroll", function(){
         let selected = [];
 
         for(let i = 0; i < backgrounds.length; ++i){
