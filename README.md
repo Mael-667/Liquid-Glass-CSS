@@ -2,7 +2,7 @@
 
 ## Overview
 
-**Liquid Glass CSS** is a lightweight CSS/JavaScript framework that brings the elegant Liquid Glass style, inspired by Apple, to your web pages. Minimal and easy to integrate, it automatically injects necessary styles and dependencies when included in your `<head>`. Simply add the predefined classes in your HTML to style any element with the Liquid Glass effect.
+**Liquid Glass CSS** is a lightweight CSS/JavaScript library that brings the elegant Liquid Glass style, inspired by Apple, to your web pages. Minimal and easy to integrate, it automatically injects necessary styles and dependencies when included in your `<head>`. Simply add the predefined classes in your HTML to style any element with the Liquid Glass effect.
 
 ---
 
