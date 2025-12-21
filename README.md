@@ -1,4 +1,4 @@
-# Liquid Glass CSS Framework
+# Liquid Glass CSS Library
 
 ## Overview
 
