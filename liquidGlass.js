@@ -52,9 +52,9 @@ function dynamicLiquidGlassColor(){
 
     //for each liquidglass element with a parent class dynamicColor, the function will check if its displayed within an element with an hue. If so, it will apply the filter and mark it as selected.
     //the unselected elements at the end of the loop, therefore those which are not at all on a background, will have their leftover hue removed
-    document.addEventListener("scroll", function(){
-        let selected = [];
 
+    let dynamicHue = () => {
+        let selected = [];
         for(let i = 0; i < backgrounds.length; ++i){
             let color = backgrounds[i].getAttribute("data-hue");
             for(let j = 0; j < elmnts.length; j++){
@@ -82,8 +82,10 @@ function dynamicLiquidGlassColor(){
                 elmnts[i].element.style.setProperty('--shadow', ``);
                 elmnts[i].element.style.setProperty('--backgroundHover', ``);
             };
-        };
-    });
+        }
+    };
+    dynamicHue();
+    document.addEventListener("scroll", throttle(dynamicHue, 70), {passive: true});
 };
 
 
@@ -124,4 +126,17 @@ function colorAdjust(color, brigthness){
     b = b < 0 ? "00" : b > 255 ? "ff" : b < 16 ? `0${b.toString(16)}` : b.toString(16);
     
     return `#${r}${g}${b}`
+}
+
+function throttle (callbackFn, limit = 100) {
+    let wait = false;                  
+    return function () {              
+        if (!wait) {                  
+            callbackFn.call();           
+            wait = true;               
+            setTimeout(function () {   
+                wait = false;          
+            }, limit);
+        }
+    }
 }
