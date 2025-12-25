@@ -15,7 +15,7 @@ The library is available in two variants:
 
 👉 View live demo on my **[portfolio](https://mael-667.github.io/portfolio/)**
 
-![Liquid Glass Refraction Demo](lgcss.gif)
+![Liquid Glass Refraction Demo](../lgcss.gif)
 
 ---
 
