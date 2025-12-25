@@ -3,10 +3,19 @@
 Liquid Glass is a lightweight CSS/JavaScript library inspired by Apple’s Liquid Glass aesthetic.
 It provides a frosted glass effect with subtle refraction, blur and dynamic color tinting based on the surrounding environment.
 
+The library is available in two variants:
+
+🧱 Vanilla CSS / JS
+
+⚛️ React Components
+
+---
 
 ## 📸 Preview
 
 👉 View live demo on my **[portfolio](https://mael-667.github.io/portfolio/)**
+
+![Liquid Glass Refraction Demo](lgcss.gif)
 
 ---
 
@@ -20,10 +29,13 @@ It provides a frosted glass effect with subtle refraction, blur and dynamic colo
 - 🧱 Vanilla CSS/JS version available
 - 📦 Zero external dependencies
 - 🚀 Lightweight and performant
+- No build tools required for vanilla version
 
 ---
 
 ## 🚀 Quick Start
+
+### React (Recommended)
 
 Install via **npm:**
 ```bash
@@ -46,9 +58,25 @@ function App() {
   );
 }
 ```
+
+### Vanilla CSS/JS
+
+```html
+<head>
+  <script src="/path/to/liquidGlass.js"></script>
+</head>
+<body>
+  <div class="liquidGlass">
+    Hello Liquid Glass
+  </div>
+</body>
+```
+
 ---
 
 ## 📦 Installation
+
+### React Version
 
 **Install the component:**
 
@@ -64,12 +92,27 @@ npm install @mael-667/liquid-glass-react
 3. Import and use in your app
 
 ```jsx
-import { LiquidGlassProvider, LiquidGlass, Tint } from "@mael667/liquid-glass-react";
+import { LiquidGlassProvider, LiquidGlass, Tint } from "./components/LiquidGlassProvider";
 ```
+
+### Vanilla Version
+
+**Download the script:**
+
+1. Download [liquidGlass.js](https://github.com/Mael-667/Liquid-Glass-CSS/releases) from the releases page
+2. Include it in your HTML `<head>`:
+
+```html
+<script src="/path/to/liquidGlass.js"></script>
+```
+
+The script automatically injects the required CSS and SVG filters.
 
 ---
 
 ## 📖 Documentation
+
+## ⚛️ React API
 
 ### Setup
 
@@ -80,7 +123,6 @@ The `<LiquidGlassProvider>` component must wrap your application. It automatical
 
 ```jsx
 import { LiquidGlassProvider } from "@mael667/liquid-glass-react";
-
 
 function App() {
   return (
@@ -171,6 +213,69 @@ Defines colored areas that affect overlapping `LiquidGlass` components with `dyn
 
 ---
 
+## 🧱 Vanilla CSS/JS API
+
+### Available Classes
+
+| Class               | Description                                |
+|---------------------|--------------------------------------------|
+| `.liquidGlass`      | Basic frosted glass effect                 |
+| `.liquidGlassLarge` | Larger glass variant                       |
+| `.glassLightMode`   | Light mode variant                         |
+| `.liquidBtn`        | Pre-styled glass button                    |
+| `.blur-[0-10]`      | Blur intensity (e.g., `.blur-5`)           |
+| `.dynamicHue`       | Enable dynamic color tinting               |
+| `.dynamicHueHvr`    | Dynamic tint with hover effect             |
+
+### Basic Usage
+
+```html
+<!-- Basic glass -->
+<div class="liquidGlass">
+  Content
+</div>
+
+<!-- Large variant with high blur -->
+<div class="liquidGlassLarge blur-8">
+  Large glass
+</div>
+
+<!-- Glass button -->
+<button class="liquidBtn">
+  Click me
+</button>
+```
+
+### Dynamic Color System
+
+Define tinted areas using the `data-hue` attribute:
+
+```html
+<nav class="dynamicHueHvr">
+  <div class="liquidGlass">
+    Navigation
+  </div>
+</nav>
+
+<section data-hue="#4169e1">
+  <!-- Blue tinted area -->
+  <h2>Section Title</h2>
+</section>
+
+<section data-hue="#ff6b6b">
+  <!-- Red tinted area -->
+  <h2>Another Section</h2>
+</section>
+```
+
+**How it works:**
+
+1. Add `data-hue="#hexcolor"` to any element to define a tinted area
+2. Add `.dynamicHue` or `.dynamicHueHvr` to a parent of your glass elements
+3. Glass elements automatically adjust their colors when overlapping tinted areas
+
+---
+
 ## 🎨 Customization
 
 You can override default styles with custom CSS:
@@ -205,7 +310,8 @@ Blur levels range from 0 (no blur) to 10 (maximum blur):
 
 ## ⚡ Performance & Bundle Size
 
-- **React version**: ~10KB minified
+- **React version**: ~15KB minified
+- **Vanilla version**: ~8KB minified
 - **Zero dependencies**
 - **CSS-in-JS with automatic injection**
 - **Minimal runtime overhead**

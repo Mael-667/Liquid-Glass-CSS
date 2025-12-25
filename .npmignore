@@ -1,0 +1,17 @@
+# Development files
+node_modules/
+.git/
+.gitignore
+.vscode/
+.idea/
+.github/
+
+# Documentation source
+docs/
+examples/
+
+# Other
+lgcss.gif
+filter.svg
+liquidGlass.css
+liquidGlass.js
