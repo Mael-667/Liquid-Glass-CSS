@@ -1,9 +1,9 @@
 {
   "name": "@mael-667/liquid-glass-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React components for creating glassy effects with dynamic color tinting inspired by Apple's Liquid Glass aesthetic",
   "main": "LiquidGlassProvider.jsx",
-    "files": [
+  "files": [
     "LiquidGlassProvider.jsx",
     "README.md",
     "LICENSE"
