@@ -1,6 +1,6 @@
-# Liquid Glass CSS / React
+# Liquid Glass React
 
-Liquid Glass is a lightweight CSS/JavaScript library inspired by Apple’s Liquid Glass aesthetic.
+Liquid Glass is a lightweight React library inspired by Apple’s Liquid Glass aesthetic.
 It provides a frosted glass effect with subtle refraction, blur and dynamic color tinting based on the surrounding environment.
 
 
