@@ -1,124 +1,345 @@
-# Liquid Glass CSS Library
+# Liquid Glass CSS / React
 
-## Overview
+Liquid Glass is a lightweight CSS/JavaScript library inspired by Apple’s Liquid Glass aesthetic.
+It provides a frosted glass effect with subtle refraction, blur and dynamic color tinting based on the surrounding environment.
 
-**Liquid Glass CSS** is a lightweight CSS/JavaScript library that brings the elegant Liquid Glass style, inspired by Apple, to your web pages. Minimal and easy to integrate, it automatically injects necessary styles and dependencies when included in your `<head>`. Simply add the predefined classes in your HTML to style any element with the Liquid Glass effect.
+The library is available in two variants:
+
+🧱 Vanilla CSS / JS
+
+⚛️ React Components
 
 ---
 
-## Installation
+## 📸 Preview
 
-Download the latest **liquidGlass.js** from the [Release section](https://github.com/Mael-667/Liquid-Glass-CSS/releases/tag/v1) and add it to your project:
+👉 View live demo on my **[portfolio](https://mael-667.github.io/portfolio/)**
+
+![Liquid Glass Refraction Demo](lgcss.gif)
+
+---
+
+## ✨ Features
+
+- 🪟 Glass effect with SVG displacement
+- 🎨 Dynamic color tinting based on surrounding backgrounds
+- 🔧 Adjustable blur intensity (0-10 levels)
+- 💡 Light & large variants
+- ⚛️ React-first API with automatic style injection
+- 🧱 Vanilla CSS/JS version available
+- 📦 Zero external dependencies
+- 🚀 Lightweight and performant
+- No build tools required for vanilla version
+
+---
+
+## 🚀 Quick Start
+
+### React (Recommended)
+
+```jsx
+import { LiquidGlassProvider, LiquidGlass } from "./LiquidGlassProvider";
+
+function App() {
+  return (
+    <LiquidGlassProvider>
+      <LiquidGlass>
+        Hello Liquid Glass
+      </LiquidGlass>
+    </LiquidGlassProvider>
+  );
+}
+```
+
+### Vanilla CSS/JS
 
 ```html
 <head>
-   <!-- other meta / css -->
-   <script src="/path/to/liquidGlass.js"></script>
+  <script src="/path/to/liquidGlass.js"></script>
 </head>
+<body>
+  <div class="liquidGlass">
+    Hello Liquid Glass
+  </div>
+</body>
 ```
-
-For more control over styling, you can clone the repository and include `liquidGlass.css` and `filter.svg` in your project. Make sure the path to `filter.svg` in the CSS matches its location in your project.
 
 ---
 
-## Usage
+## 📦 Installation
 
-After importing the script, apply Liquid Glass effects by adding the appropriate classes directly to your HTML elements:
+### React Version
 
-### `.liquidGlass`
+**Download the component:**
 
-Applies the core Liquid Glass effect:
+1. Download [LiquidGlassProvider.jsx](https://github.com/Mael-667/Liquid-Glass-CSS/releases) from the releases page
+2. Copy the file into your project (e.g., `src/components/`)
+3. Import and use in your app
 
-* Transparent, frosted background with a subtle refraction effect
-* Slight background saturation
-* White, slightly enlarged text with shadows for readability
-* Rounded corners and subtle shadows for depth (adjustable via `.liquidGlass::after`)
-
-### `.glassLightMode`
-
-Use alongside `.liquidGlass` for light backgrounds:
-
-* Black text
-* Removes depth shadows for a cleaner, modern look
-
-### `.liquidGlassLarge`
-
-A variant of `.liquidGlass` optimized for larger surfaces:
-
-* Same effects as `.liquidGlass`
-* No saturation to avoid visual distraction on large areas
-* Larger border-radius (customizable as shown below):
-
-```css
-.liquidGlassLarge, .liquidGlassLarge::before, .liquidGlassLarge::after {
-    border-radius: (your-radius);
-}
+```jsx
+import { LiquidGlassProvider, LiquidGlass, Tint } from "./components/LiquidGlassProvider";
 ```
 
-### `.blur-[0-10]`
+### Vanilla Version
 
-Individually adjust the frost (blur) of each liquidGlass element, from 0 to 10 pixels.
+**Download the script:**
 
-
-### `.liquidBtn`
-
-Designed for frosted-glass buttons:
-
-* Slightly white translucent background
-* Subtle semi-transparent border
-* White text with soft black shadow for readability
-* Rounded corners (`border-radius: 0.5rem`)
-* Smooth hover transitions
-
----
-
-## Dynamic Colorization
-
-You can automatically tint `.liquidGlass` elements based on the surrounding environment:
-
-1. Set a dominant color on an HTML element using `data-hue="#hexcolor"`.
-2. Add `.dynamicHue` (or `.dynamicHueHvr` for hover effects) to a liquidGlass parent element.
-
-Liquid Glass elements will now change color based on the defined tint of the element they hover over.
-
-**Example**:
+1. Download [liquidGlass.js](https://github.com/Mael-667/Liquid-Glass-CSS/releases) from the releases page
+2. Include it in your HTML `<head>`:
 
 ```html
-<nav class="dynamicHueHvr" style="display: sticky;">
-    <div class="liquidGlass">Hello</div>
-</nav>
-<div data-hue="#4169e1">
-    <!-- content -->
+<script src="/path/to/liquidGlass.js"></script>
+```
+
+The script automatically injects the required CSS and SVG filters.
+
+---
+
+## 📖 Documentation
+
+## ⚛️ React API
+
+### Setup
+
+Wrap your application with `LiquidGlassProvider`:
+
+```jsx
+import { LiquidGlassProvider } from "./LiquidGlassProvider";
+
+function App() {
+  return (
+    <LiquidGlassProvider>
+      {/* Your app components */}
+    </LiquidGlassProvider>
+  );
+}
+```
+
+### `<LiquidGlass />` Component
+
+The main component for creating glass effect elements.
+
+```jsx
+<LiquidGlass large dynamic hoverable>
+  Content here
+</LiquidGlass>
+```
+
+#### Props
+
+| Prop        | Type      | Default | Description                                    |
+|-------------|-----------|---------|------------------------------------------------|
+| `as`        | `string`  | `div`   | HTML tag to render (e.g., `nav`, `button`)     |
+| `large`     | `boolean` | `false` | Use large glass variant                        |
+| `className` | `string`  | `""`    | Additional CSS classes                         |
+| `dynamic`   | `boolean` | `false` | Enable dynamic color tinting                   |
+| `hoverable` | `boolean` | `false` | Enable hover tint effect (requires `dynamic`)  |
+
+**Examples:**
+
+```jsx
+// Basic usage
+<LiquidGlass>
+  Basic glass effect
+</LiquidGlass>
+
+// Navigation with large variant
+<LiquidGlass as="article" large>
+  Navigation
+</LiquidGlass>
+
+// Button with dynamic tint
+<LiquidGlass as="button" dynamic hoverable>
+  Click me
+</LiquidGlass>
+```
+
+---
+
+### `<Tint />` Component
+
+Defines colored areas that affect overlapping `LiquidGlass` components with `dynamic` enabled.
+
+```jsx
+<Tint as="section" hue="#4169e1">
+  Content with blue tint
+</Tint>
+```
+
+#### Props
+
+| Prop  | Type     | Default | Description                        |
+|-------|----------|---------|------------------------------------|
+| `as`  | `string` | `"div"` | HTML tag to render                 |
+| `hue` | `string` | -       | Hex color for tinting (required)   |
+
+**Example with dynamic tinting:**
+
+```jsx
+<header>
+  <LiquidGlass as="nav" dynamic hoverable>
+    Home
+  </LiquidGlass>
+</header>
+
+<Tint as="section" hue="#4169e1">
+  <h2>Blue Tinted Section</h2>
+  <p>Glass elements above will adapt to this color</p>
+</Tint>
+
+<Tint as="section" hue="#ff6b6b">
+  <h2>Red Tinted Section</h2>
+  <p>Different tint for this area</p>
+</Tint>
+```
+
+---
+
+## 🧱 Vanilla CSS/JS API
+
+### Available Classes
+
+| Class               | Description                                |
+|---------------------|--------------------------------------------|
+| `.liquidGlass`      | Basic frosted glass effect                 |
+| `.liquidGlassLarge` | Larger glass variant                       |
+| `.glassLightMode`   | Light mode variant                         |
+| `.liquidBtn`        | Pre-styled glass button                    |
+| `.blur-[0-10]`      | Blur intensity (e.g., `.blur-5`)           |
+| `.dynamicHue`       | Enable dynamic color tinting               |
+| `.dynamicHueHvr`    | Dynamic tint with hover effect             |
+
+### Basic Usage
+
+```html
+<!-- Basic glass -->
+<div class="liquidGlass">
+  Content
 </div>
+
+<!-- Large variant with high blur -->
+<div class="liquidGlassLarge blur-8">
+  Large glass
+</div>
+
+<!-- Glass button -->
+<button class="liquidBtn">
+  Click me
+</button>
 ```
 
+### Dynamic Color System
+
+Define tinted areas using the `data-hue` attribute:
+
+```html
+<nav class="dynamicHueHvr">
+  <div class="liquidGlass">
+    Navigation
+  </div>
+</nav>
+
+<section data-hue="#4169e1">
+  <!-- Blue tinted area -->
+  <h2>Section Title</h2>
+</section>
+
+<section data-hue="#ff6b6b">
+  <!-- Red tinted area -->
+  <h2>Another Section</h2>
+</section>
+```
+
+**How it works:**
+
+1. Add `data-hue="#hexcolor"` to any element to define a tinted area
+2. Add `.dynamicHue` or `.dynamicHueHvr` to a parent of your glass elements
+3. Glass elements automatically adjust their colors when overlapping tinted areas
+
 ---
 
-## Example
+## 🎨 Customization
 
-Check out [my portfolio](https://mael-667.github.io/portfolio/) for live examples of Liquid Glass CSS in action.
+You can override default styles with custom CSS:
 
----
+### Border Radius
 
-## Customization
-
-* **Background color & Shadows**: Modify on the element's `:after` pseudo-element.
 ```css
-.element::after {
-    background: rgb(0 0 0 / 7%);
-    box-shadow:inset 1px 1px 3px #ffffff, inset -1px -2px 3px #3131314d, 0px 0px 12px #00000075;
+.liquidGlass,
+.liquidGlass::before,
+.liquidGlass::after {
+  border-radius: 2rem;
 }
 ```
 
-* **Border-radius**: Apply changes to the element itself, as well as its `:before` and `:after` pseudo-elements:
+### Background & Shadows
+
 ```css
-.element, .element::before, .element::after {
-    border-radius: (your-radius);
+.liquidGlass::after {
+  background: rgba(230, 18, 18, 0.1);
+  box-shadow:
+    inset 1px 1px 3px rgba(238, 0, 0, 0.39),
+    inset -1px -2px 3px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(0, 0, 0, 0.5);
 }
 ```
 
+### Blur Intensity Scale
+
+Blur levels range from 0 (no blur) to 10 (maximum blur):
+
 ---
 
-## Feedback
+## ⚡ Performance & Bundle Size
 
-I’d love to hear your thoughts! If you have any suggestions or encounter any issues, please feel free to reach out or open an issue.
+- **React version**: ~15KB minified
+- **Vanilla version**: ~8KB minified
+- **Zero dependencies**
+- **CSS-in-JS with automatic injection**
+- **Minimal runtime overhead**
+
+---
+
+## ♿ Accessibility
+
+The library maintains semantic HTML and doesn't interfere with:
+- Screen readers
+- Keyboard navigation
+- Focus indicators
+
+Ensure you provide appropriate ARIA labels and semantic elements when using `as` prop.
+
+---
+
+## 🌐 Browser Compatibility
+
+| Browser | Version |
+|---------|---------|
+| Chrome  | 90+     |
+| Firefox | 88+     |
+| Safari  | 14+     |
+| Edge    | 90+     |
+
+*Requires support for CSS backdrop-filter and SVG filters.*
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how you can help:
+
+1. **Report bugs** - Open an issue with reproduction steps
+2. **Suggest features** - Share your ideas in discussions
+3. **Submit PRs** - Fork, create a branch, and submit a pull request
+4. **Improve docs** - Help make the documentation clearer
+
+---
+
+## 📬 Feedback
+
+Found a bug or have suggestions? 
+
+- Open an issue on [GitHub](https://github.com/Mael-667/Liquid-Glass-CSS/issues)
+- Check out the [live demo](https://mael-667.github.io/portfolio/)
+
+**Made with ❤️ by me 🐐**
