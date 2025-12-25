@@ -39,14 +39,14 @@ The library is available in two variants:
 
 Install via **npm:**
 ```bash
-npm install @mael667/liquid-glass-react
+npm install @mael-667/liquid-glass-react
 ```
 
 
 Wrap your application with `<LiquidGlassProvider>` to inject styles and activate dynamic color features:
 
 ```jsx
-import { LiquidGlassProvider, LiquidGlass } from "@mael667/liquid-glass-react";
+import { LiquidGlassProvider, LiquidGlass } from "@mael-667/liquid-glass-react";
 
 function App() {
   return (
@@ -122,7 +122,7 @@ The `<LiquidGlassProvider>` component must wrap your application. It automatical
 - Activates the dynamic color system
 
 ```jsx
-import { LiquidGlassProvider } from "@mael667/liquid-glass-react";
+import { LiquidGlassProvider } from "@mael-667/liquid-glass-react";
 
 function App() {
   return (
