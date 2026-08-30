@@ -1,12 +1,12 @@
 .liquidGlass, .liquidGlass::after, .liquidGlass::before{
     transform: translate3d(0, 0, 0);
     border-radius: 0.9rem;
-    top: 0;
 }
 
 .liquidGlass{
     position: relative;
-    z-index: 10;
+    z-index: 1;
+    
     width: fit-content;
     color: white;
     font-size: 1.1em;
@@ -16,20 +16,17 @@
 .liquidGlass::after, .liquidGlass::before{
     pointer-events: none;
     position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
 }
 
 
-.liquidGlass>*{
-    position: relative;
-    z-index: 12;
-}
-
 .liquidGlass::after{
     content: "";
     display: block;
-    z-index: 11;
+    z-index: -1;
     box-shadow: inset 1px 1px 2px 0px rgb(255 255 255 / 87%), inset -1px -2px 3px 1px rgb(49 49 49 / 30%), 0px 0px 6px 1px rgb(0 0 0 / 38%);
     background: rgb(255 255 255 / 3%);
 }
@@ -38,8 +35,8 @@
 .liquidGlass::before{
     content: "";
     display: block;
-    z-index: 9;
-    filter: url(./filter.svg#liquidGlassFilter2);
+    z-index: -2;
+    filter: url(#liquidGlassFilter2);
     backdrop-filter: blur(3px);
 }
 
@@ -57,12 +54,12 @@
 .liquidGlassLarge, .liquidGlassLarge::after, .liquidGlassLarge::before{
     transform: translate3d(0, 0, 0);
     border-radius: 3rem;
-    top: 0;
 }
 
 .liquidGlassLarge{
     position: relative;
-    z-index: 10;
+    z-index: 1;
+    
     width: fit-content;
     color: white;
     font-size: 1.1em;
@@ -72,31 +69,36 @@
 .liquidGlassLarge::after, .liquidGlassLarge::before{
     pointer-events: none;
     position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
-}
-
-
-.liquidGlassLarge>*{
-    position: relative;
-    z-index: 12;
 }
 
 
 .liquidGlassLarge::before{
     content: "";
     display: block;
-    z-index: 9;
-    filter: url(./filter.svg#liquidGlassFilter);
+    z-index: -2;
+    filter: url(#liquidGlassFilter);
     backdrop-filter: blur(3px);
 }
 
 .liquidGlassLarge::after{
     content: "";
     display: block;
-    z-index: 11;
+    z-index: -1;
     background: rgb(255 255 255 / 3%);
     box-shadow:inset 1px 1px 3px 1px rgb(255 255 255 / 38%), inset -1px -2px 3px 1px rgb(49 49 49 / 30%), 0px 0px 7px 1px rgb(0 0 0 / 46%);
+}
+
+button.liquidGlass, button.liquidGlassLarge{
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    border: 0;
+    font-family: inherit;
+    cursor: pointer;
 }
 
 .liquidBtn{

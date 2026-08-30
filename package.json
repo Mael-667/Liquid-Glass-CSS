@@ -1,6 +1,6 @@
 {
   "name": "@mael-667/liquid-glass-react",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "React components for creating glassy effects with dynamic color tinting inspired by Apple's Liquid Glass aesthetic",
   "main": "LiquidGlassProvider.jsx",
   "files": [
@@ -23,13 +23,13 @@
     "react-components",
     "glass",
     "glassmorphism",
-    "frosted-glass",
-    "liquid-glass",
+    "frosted glass",
+    "liquid glass",
     "apple",
-    "ui-components",
+    "ui components",
     "backdrop-filter",
     "blur",
-    "design-system",
+    "design system",
     "ui"
   ],
   "author": {
@@ -37,7 +37,7 @@
     "url": "https://mael-667.github.io/portfolio/"
   },
   "peerDependencies": {
-    "react": ">=16.8.0"
+    "react": ">=18"
   },
   "license": "GPL-3.0",
   "bugs": {
